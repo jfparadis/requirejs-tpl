@@ -10,7 +10,7 @@ This is an AMD loader for [UnderscoreJS micro-templates](http://underscorejs.org
 
 - Uses the official `text`` loader plugin maintained by the RequireJS team.
 
-- You don't have to specify the template file extension (``.html is assumed``, but this is configurable). 
+- You don't have to specify the template file extension (``.html is assumed``, but this is configurable).
 
 
 Notes:
@@ -30,17 +30,17 @@ Download UnderscoreJS and RequireJS-text:
 Typically, you would place them in a ``scripts/libs`` folder then create a ``scripts/main.js`` file to alias then and to shim UndescoreJS:
 
 ```
-	require.config({
-    	paths: {
-       	 	underscore: 'libs/requirejs',
-       	 	text: 'libs/text'
-            tpl: 'libs/tpl'
-    	},
-    	shim: {
-        	'underscore': {
-                exports: '_'
-            }
-    }
+require.config({
+    paths: {
+          underscore: 'libs/requirejs',
+          text: 'libs/text'
+          tpl: 'libs/tpl'
+    },
+    shim: {
+        'underscore': {
+              exports: '_'
+          }
+  }
 });
 ```
 
@@ -49,15 +49,15 @@ Typically, you would place them in a ``scripts/libs`` folder then create a ``scr
 Specify the plugin using ``tpl!`` followed by the template file:
 
 ```
-   require(['backbone', 'tpl!template'], function (Backbone, template) {
-       return Backbone.View.extend({
-           initialize: function(){
-               this.render();
-         	},
-       		render: function(){
-         		this.$el.html(template({message: 'hello'}));
-   		});
-   });
+require(['backbone', 'tpl!template'], function (Backbone, template) {
+   return Backbone.View.extend({
+      initialize: function(){
+        this.render();
+      },
+      render: function(){
+        this.$el.html(template({message: 'hello'}));
+    });
+});
 ```
 
 ## Customization
@@ -67,11 +67,11 @@ You can specify the template file extension in your main.js:
 ```
 require.config({
 
-    // some paths and shims
+  // some paths and shims
 
-    tpl: {
-       extension: '.tpl' // default = '.html'
-    }
+  tpl: {
+     extension: '.tpl' // default = '.html'
+  }
 });
 ```
 
@@ -108,8 +108,8 @@ Alternatively, you can use Connect and NodeJS to spin a web server:
 - Install ``connect`` using ``npm`` and launch the server with NodeJS:
 
 ```
-	$ npm install -g connect
-	$ node server.js
+  $ npm install -g connect
+  $ node server.js
 ```
 
 Go to http://localhost:9000/example. Your browser should load:
