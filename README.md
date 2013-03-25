@@ -31,15 +31,15 @@ Typically, you would place them in a ``scripts/libs`` folder then create a ``scr
 
 ```
 require.config({
-    paths: {
-          underscore: 'libs/requirejs',
-          text: 'libs/text'
-          tpl: 'libs/tpl'
-    },
-    shim: {
-        'underscore': {
-              exports: '_'
-          }
+  paths: {
+    underscore: 'libs/requirejs',
+    text: 'libs/text'
+    tpl: 'libs/tpl'
+  },
+  shim: {
+    'underscore': {
+      exports: '_'
+    }
   }
 });
 ```
@@ -50,13 +50,13 @@ Specify the plugin using ``tpl!`` followed by the template file:
 
 ```
 require(['backbone', 'tpl!template'], function (Backbone, template) {
-   return Backbone.View.extend({
-      initialize: function(){
-        this.render();
-      },
-      render: function(){
-        this.$el.html(template({message: 'hello'}));
-    });
+  return Backbone.View.extend({
+    initialize: function(){
+      this.render();
+    },
+    render: function(){
+      this.$el.html(template({message: 'hello'}));
+  });
 });
 ```
 
@@ -70,7 +70,7 @@ require.config({
   // some paths and shims
 
   tpl: {
-     extension: '.tpl' // default = '.html'
+    extension: '.tpl' // default = '.html'
   }
 });
 ```
