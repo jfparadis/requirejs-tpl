@@ -93,11 +93,11 @@ The most important build options are:
 - ``stubModules: ['underscore', 'text', 'tpl']``
 
 
->The list of modules to stub out in the optimized file, i.e. the code is replaced with ``define('module',{});`` by ``r.js``
+> The list of modules to stub out in the optimized file, i.e. the code is replaced with ``define('module',{});`` by ``r.js``
 
 - ``removeCombined: true``
 
->Removes from the output folder the files combined into a build.
+> Removes from the output folder the files combined into a build.
 
 ## Example
 
