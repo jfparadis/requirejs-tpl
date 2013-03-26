@@ -32,7 +32,7 @@ Typically, you would place them in a ``scripts/libs`` folder then create a ``scr
 ```
 require.config({
   paths: {
-    underscore: 'libs/requirejs',
+    underscore: 'libs/underscore',
     text: 'libs/text'
     tpl: 'libs/tpl'
   },
