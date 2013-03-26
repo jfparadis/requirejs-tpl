@@ -31,38 +31,37 @@
 /*jslint nomen: true */
 /*global define: false */
 
-(function () {
+define(['text', 'underscore'], function (text, _) {
     'use strict';
-    var buildMap = {};
+    var buildMap = {},
+        buildTemplateSource = "define('{pluginName}!{moduleName}', function () { return {source}; });\n";
 
-    define(['text', 'underscore'], function (text, _) {
-        return {
-            version: '0.0.1',
+    return {
+        version: '0.0.1',
 
-            load: function (moduleName, parentRequire, onload, config) {
-                if (buildMap[moduleName]) {
+        load: function (moduleName, parentRequire, onload, config) {
+            if (buildMap[moduleName]) {
+                onload(buildMap[moduleName]);
+
+            } else {
+                var ext = (config.tpl && config.tpl.extension) || '.html';
+                text.load(moduleName + ext, parentRequire, function (source) {
+                    buildMap[moduleName] = _.template(source);
                     onload(buildMap[moduleName]);
-
-                } else {
-                    var ext = (config.tpl && config.tpl.extension) || '.html';
-                    text.load(moduleName + ext, parentRequire, function (source) {
-                        buildMap[moduleName] = _.template(source);
-                        onload(buildMap[moduleName]);
-                    }, config);
-                }
-            },
-
-            write: function (pluginName, moduleName, write) {
-                var build = buildMap[moduleName],
-                    source = build && build.source;
-                if (source) {
-                    write.asModule(pluginName + '!' + moduleName,
-                        "define('{pluginName}!{moduleName}', function () { return {source}; });\n"
-                        .replace('{pluginName}', pluginName)
-                        .replace('{moduleName}', moduleName)
-                        .replace('{source}', source));
-                }
+                }, config);
             }
-        };
-    });
-}());
+        },
+
+        write: function (pluginName, moduleName, write) {
+            var build = buildMap[moduleName],
+                source = build && build.source;
+            if (source) {
+                write.asModule(pluginName + '!' + moduleName,
+                    buildTemplateSource
+                    .replace('{pluginName}', pluginName)
+                    .replace('{moduleName}', moduleName)
+                    .replace('{source}', source));
+            }
+        }
+    };
+});

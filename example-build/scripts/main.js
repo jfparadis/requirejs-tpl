@@ -2,7 +2,7 @@
 define('text',{});
 define('underscore',{});
 define('tpl',{load: function(id){throw new Error("Dynamic load not allowed: " + id);}});
-define('tpl!templates/message', function () { return function(obj){
+define('tpl!templates/message',[], function () { return function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
 __p+='<h1>\n    Message\n</h1>\n<p>\n    '+
