@@ -17,7 +17,7 @@ Notes:
 
 - Both libraries can be removed at build-time using ``r.js``.
 
-- The silent extension ``.html`` makes loading templates similar to loading JavaScript files with RequireJS.
+- The extension ``.html`` is assmumed, and this makes loading templates similar to loading JavaScript files with RequireJS (all extensions are assumned).
 
 ## Installation
 
@@ -27,7 +27,7 @@ Download UnderscoreJS and RequireJS-text:
 
 - [RequireJS-text](http://requirejs.org/docs/download.html#text)
 
-Typically, you would place them in a ``scripts/libs`` folder then create a ``scripts/main.js`` file to alias then and to shim UndescoreJS:
+Typically, you would place them in a ``scripts/libs`` folder then create a ``scripts/main.js`` file to alias them and to shim UndescoreJS:
 
 ```
 require.config({
