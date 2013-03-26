@@ -8,7 +8,7 @@ This is an AMD loader for [UnderscoreJS micro-templates](http://underscorejs.org
 
 - Uses the ``_.template()`` engine maintained by the UnderscoreJS team.
 
-- Uses the official `text`` loader plugin maintained by the RequireJS team.
+- Uses the official ``text`` loader plugin maintained by the RequireJS team.
 
 - You don't have to specify the template file extension (``.html is assumed``, but this is configurable).
 
@@ -128,7 +128,7 @@ Go to http://localhost:9000/example. Your browser should load:
 
 - message.html
 
-Go to http://localhost:9000/example-build. Your browser should load
+Go to http://localhost:9000/example-build. Your browser should load:
 
 - index.html
 
