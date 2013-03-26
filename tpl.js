@@ -53,12 +53,14 @@
             },
 
             write: function (pluginName, moduleName, write) {
-                var build = buildMap[moduleName];
-                if (build && build.source) {
-                    write("define('{pluginName}!{moduleName}', function () { return {source}; });\n"
+                var build = buildMap[moduleName],
+                    source = build && build.source;
+                if (source) {
+                    write.asModule(pluginName + '!' + moduleName,
+                        "define('{pluginName}!{moduleName}', function () { return {source}; });\n"
                         .replace('{pluginName}', pluginName)
                         .replace('{moduleName}', moduleName)
-                        .replace('{source}', build.source));
+                        .replace('{source}', source));
                 }
             }
         };
