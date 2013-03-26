@@ -6,7 +6,7 @@ require({
         tpl: 'libs/tpl'
     },
     shim: {
-        'underscore': {
+        underscore: {
             exports: '_'
         }
     }
