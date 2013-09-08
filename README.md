@@ -19,6 +19,14 @@ Notes:
 
 - The extension ``.html`` is assmumed, and this makes loading templates similar to loading JavaScript files with RequireJS (all extensions are assumned).
 
+## Changelog
+
+0.0.1 Initial version
+0.0.2 Various updates:
+- Add template path option to tpl.js (thanks drewrichards)
+- Updated require.js to 2.1.8 , and r.js to 2.1.8
+- Updated underscore.js to 1.5.2
+
 ## Installation
 
 Download UnderscoreJS and RequireJS-text:

@@ -6,7 +6,7 @@
 // Using UnderscoreJS micro-templates at http://underscorejs.org/#template
 // Using and RequireJS text.js at http://requirejs.org/docs/api.html#text
 // @author JF Paradis
-// @version 0.0.1
+// @version 0.0.2
 //
 // Released under the MIT license
 //
@@ -33,11 +33,12 @@
 
 define(['text', 'underscore'], function (text, _) {
     'use strict';
+
     var buildMap = {},
         buildTemplateSource = "define('{pluginName}!{moduleName}', function () { return {source}; });\n";
 
     return {
-        version: '0.0.1',
+        version: '0.0.2',
 
         load: function (moduleName, parentRequire, onload, config) {
             if (buildMap[moduleName]) {
@@ -45,7 +46,8 @@ define(['text', 'underscore'], function (text, _) {
 
             } else {
                 var ext = (config.tpl && config.tpl.extension) || '.html';
-                text.load(moduleName + ext, parentRequire, function (source) {
+                var path = (config.tpl && config.tpl.path) || '';
+                text.load(path + moduleName + ext, parentRequire, function (source) {
                     buildMap[moduleName] = _.template(source);
                     onload(buildMap[moduleName]);
                 }, config);
