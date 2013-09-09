@@ -97,7 +97,11 @@ Removes from the output folder the files combined into a build.
 
 ## Example
 
+### Using an existing web server
+
 Copy the ``example`` and ``example-build`` folders to your web server (``text`` is not compatible with the ``file://`` protocol and opening ``index.hml`` directly from your browser will not work).
+
+### Using a test server
 
 Alternatively, you can use Connect and NodeJS to spin a web server:
 
