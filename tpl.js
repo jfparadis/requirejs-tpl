@@ -42,7 +42,7 @@ define(['text', 'underscore'], function (text, _) {
 
         load: function (moduleName, parentRequire, onload, config) {
 
-            if (config.tpl.templateSettings) {
+            if (config.tpl && config.tpl.templateSettings) {
                 _.templateSettings = config.tpl.templateSettings;
             }
 
