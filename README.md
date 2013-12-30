@@ -75,6 +75,26 @@ require.config({
   }
 });
 ```
+
+Underscore allows you to configure the style of templating (more specifically,
+the syntax for how variables are interpolated, conditional statements and
+comments).  Refer to the [templateSettings](http://underscorejs.org/#template) variable.
+
+Similarly to setting the template file extension, you can set
+templateSettings in your main.js:
+
+```
+require.config({
+
+    // Use Mustache style syntax for variable interpolation
+
+    templateSettings: {
+        evaluate : /\{\[([\s\S]+?)\]\}/g,
+        interpolate : /\{\{([\s\S]+?)\}\}/g
+    }
+});
+```
+
 ## Optimization
 
 This plugin is compatible with [r.js](http://requirejs.org/docs/optimization.html).
