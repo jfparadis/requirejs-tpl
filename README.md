@@ -1,6 +1,8 @@
 requirejs-tpl
 =============
 
+*This is a fork which adds the features mentioned under the 0.0.3 release in the Changelog below*
+
 This is an AMD loader for [UnderscoreJS micro-templates](http://underscorejs.org/#template) which can be used as a drop-in replacement to [ZeeAgency/requirejs-tpl](http://github.com/ZeeAgency/requirejs-tpl)
 
 ## Overview
@@ -22,6 +24,9 @@ Notes:
 - Add template path option to tpl.js (thanks drewrichards)
 - Updated require.js to 2.1.8 , and r.js to 2.1.8
 - Updated underscore.js to 1.5.2
+
+0.0.3 (Unreleased)
+- Add option to configure underscore's template settings (i.e. to customize template delimeters)
 
 ## Installation
 
