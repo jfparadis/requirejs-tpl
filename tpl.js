@@ -41,6 +41,11 @@ define(['text', 'underscore'], function (text, _) {
         version: '0.0.2',
 
         load: function (moduleName, parentRequire, onload, config) {
+
+            if (config.tpl && config.tpl.templateSettings) {
+                _.templateSettings = config.tpl.templateSettings;
+            }
+
             if (buildMap[moduleName]) {
                 onload(buildMap[moduleName]);
 
