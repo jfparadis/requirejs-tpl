@@ -50,7 +50,7 @@ define(['text', 'underscore'], function (text, _) {
                 onload(buildMap[moduleName]);
 
             } else {
-                var ext = (config.tpl && config.tpl.extension) || '.html';
+                var ext = config.tpl && !_.isUndefined(config.tpl.extension) ? config.tpl.extension : '.html';
                 var path = (config.tpl && config.tpl.path) || '';
                 text.load(path + moduleName + ext, parentRequire, function (source) {
                     buildMap[moduleName] = _.template(source);
